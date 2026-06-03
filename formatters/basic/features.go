@@ -33,6 +33,12 @@ func ConfigureFeaturesFromConfig(config *Config) yamlfmt.FeatureList {
 			hotfix.MakeFeatureRetainLineBreak(lineSep, config.RetainLineBreaksSingle),
 		)
 	}
+	if config.LineBreaksBetweenTopLevel {
+		configuredFeatures = append(
+			configuredFeatures,
+			features.MakeFeatureLineBreaksBetweenTopLevelBlocks(lineSep),
+		)
+	}
 	if config.TrimTrailingWhitespace {
 		configuredFeatures = append(
 			configuredFeatures,

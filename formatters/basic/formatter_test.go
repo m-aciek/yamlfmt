@@ -72,6 +72,40 @@ a:`,
 			expect: "a:\nb:\nc:\n",
 		},
 		{
+			name: "line breaks between top-level blocks",
+			config: map[string]any{
+				"line_breaks_between_top_level_blocks": true,
+			},
+			input: `a: 1
+b: 2
+c:
+  d: 4`,
+			expect: `a: 1
+
+b: 2
+
+c:
+  d: 4`,
+		},
+		{
+			name: "line breaks between top-level blocks multi-doc",
+			config: map[string]any{
+				"line_breaks_between_top_level_blocks": true,
+			},
+			input: `a: 1
+b: 2
+---
+c: 3
+d: 4`,
+			expect: `a: 1
+
+b: 2
+---
+c: 3
+
+d: 4`,
+		},
+		{
 			name:  "emoji support",
 			input: `a: 😊`,
 		},

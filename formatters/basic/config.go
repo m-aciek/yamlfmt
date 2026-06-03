@@ -26,6 +26,7 @@ type Config struct {
 	IncludeDocumentStart      bool                       `mapstructure:"include_document_start"`
 	LineEnding                yamlfmt.LineBreakStyle     `mapstructure:"line_ending"`
 	LineLength                int                        `mapstructure:"max_line_length"`
+	LineBreaksBetweenTopLevel bool                       `mapstructure:"line_breaks_between_top_level_blocks"`
 	RetainLineBreaks          bool                       `mapstructure:"retain_line_breaks"`
 	RetainLineBreaksSingle    bool                       `mapstructure:"retain_line_breaks_single"`
 	DisallowAnchors           bool                       `mapstructure:"disallow_anchors"`
